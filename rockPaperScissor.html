@@ -1,0 +1,37 @@
+<html>
+    <script>
+        function computerPlay()
+        {
+           items = ["Rock","Paper","Scissors"]
+           return items[Math.floor(Math.random()*items.length)]  
+        }
+        function playRound(playerSelection,computerSelection)
+        {
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+            if(playerSelection == 'rock' && computerSelection == 'scissors' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'scissors' && computerSelection == 'paper')
+            {
+                return `you won ! ${playerSelection} beats ${computerSelection}`;
+            }
+            else if(playerSelection == computerSelection)
+            {
+                return "Tied!"
+            }
+            else{
+                return `you lose ! ${computerSelection} beats ${playerSelection}`;
+
+            }
+            
+        }
+        function game()
+        {
+            for(let i=1;i<=5;i++)
+            {
+                playerSelection = prompt("Rock,Paper,scissors!");
+                computerSelection = computerPlay();
+                alert(playRound(playerSelection,computerSelection));
+            }
+        }
+        game();
+    </script>
+</html>
